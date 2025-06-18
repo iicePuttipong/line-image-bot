@@ -42,9 +42,16 @@ def list_images():
         
         if not image_files:
             return """
-            <h1>ไม่มีรูปภาพ</h1>
-            <p>ยังไม่มีรูปภาพถูกบันทึก</p>
-            <a href="/">กลับหน้าหลัก</a>
+            <html>
+            <head>
+                <title>ไม่มีรูปภาพ</title>
+            </head>
+            <body>
+                <h1>ไม่มีรูปภาพ</h1>
+                <p>ยังไม่มีรูปภาพถูกบันทึก</p>
+                <a href="/">กลับหน้าหลัก</a>
+            </body>
+            </html>
             """
         
         # สร้าง HTML แบบสวยงาม
@@ -53,7 +60,10 @@ def list_images():
         <head>
             <title>รูปภาพทั้งหมด</title>
             <style>
-                body { font-family: Arial, sans-serif; margin: 20px; }
+                body { 
+                    font-family: Arial, sans-serif; 
+                    margin: 20px; 
+                }
                 h1 { color: #333; }
                 .image-grid { 
                     display: grid; 
