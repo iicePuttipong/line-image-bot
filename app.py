@@ -114,21 +114,19 @@ def handle_image_message(event):
         
         print(f"Saved image: {filepath}")
         
-        # ตอบกลับผู้ใช้
-        base_url = "https://line-image-bot.onrender.com"
-        reply_text = f"✅ Image saved!\n📁 {filename}\n🔗 View: {base_url}/view/{filename}\n📋 All images: {base_url}/images"
-        
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text=reply_text)
-        )
+        # ไม่ต้องตอบกลับ - comment หรือลบส่วนนี้ออก
+        # line_bot_api.reply_message(
+        #     event.reply_token,
+        #     TextSendMessage(text=reply_text)
+        # )
         
     except Exception as e:
         print(f"Error: {str(e)}")
-        line_bot_api.reply_message(
-            event.reply_token,
-            TextSendMessage(text='❌ Error saving image')
-        )
+        # ไม่ต้องตอบกลับเมื่อ error
+        # line_bot_api.reply_message(
+        #     event.reply_token,
+        #     TextSendMessage(text='❌ Error saving image')
+        # )
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 5000))
